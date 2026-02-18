@@ -135,14 +135,17 @@ body {
   color: rgba(250, 249, 245, 0.6);
 }
 
-/* IMAGEM DO EBOOK */
+/* IMAGEM DO EBOOK - Card branco */
 .hero-imagem {
-  max-width: 240px;
-  width: 70%;
+  max-width: 260px;
+  width: 75%;
   height: auto;
-  margin: 1.25rem auto;
+  margin: 1.5rem auto;
   display: block;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+  border-radius: 12px;
+  background: #1a1a1a;
+  padding: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* SEÇÕES */
