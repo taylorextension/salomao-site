@@ -297,7 +297,7 @@ const VendasPage = () => {
         <div className="oferta-box">
           <div className="oferta-tag">Oferta de Lançamento</div>
           
-          <h2 className="oferta-titulo">Guia Digital: TDAH</h2>
+          <h2 className="oferta-titulo">Entendendo o TDAH</h2>
           
           <p className="oferta-subtitle">Entenda seu filho tão profundamente que você se torna o melhor aliado de quem o ajuda.</p>
 
