@@ -56,7 +56,9 @@ const VendasPage = () => {
           Sem depender apenas de consultas médicas caras. Sem sentir-se um pai incompetente. Sem culpa.
         </p>
 
-        <img src="./capa-ebook.jpg" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
+        <div className="hero-imagem-container">
+          <img src="./capa-ebook.jpg" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
+        </div>
 
         <button className="cta-button" onClick={scrollToOferta}>
           QUERO TRANSFORMAR MEU FILHO
