@@ -137,13 +137,12 @@ body {
 
 /* IMAGEM DO EBOOK */
 .hero-imagem {
-  max-width: 260px;
-  width: 75%;
+  max-width: 240px;
+  width: 70%;
   height: auto;
   margin: 1.25rem auto;
   display: block;
-  border-radius: 8px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
 }
 
 /* SEÇÕES */
