@@ -73,7 +73,7 @@ const VendasPage = () => {
     <div className="vendas-page">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge">Entendendo o TDAH</div>
+        <div className="hero-badge">GUIA DIGITAL: ENTENDENDO TDAH</div>
         
         <h1 className="hero-title">
           Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
