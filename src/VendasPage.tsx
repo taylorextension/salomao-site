@@ -254,7 +254,7 @@ const VendasPage = () => {
 
         <FAQItem 
           pergunta="Quanto tempo para ver resultados?"
-          resposta="Muitos pais relatam mudanças em 2-3 semanas, quando começam a aplicar as estratégias consistentemente. Cada criança é diferente, mas a compreensão muda tudo."
+          resposta="Muitos pais relatam mudanças significativas quando começam a aplicar as estratégias consistentemente. Cada criança é diferente, mas a compreensão muda tudo desde o primeiro capítulo."
         />
 
         <FAQItem 
@@ -286,7 +286,7 @@ const VendasPage = () => {
             <div className="comparativo-lista">
               <div className="comparativo-item-sim"><IconCheck /> <span>Investir no conhecimento</span></div>
               <div className="comparativo-item-sim"><IconCheck /> <span>Mudar sua relação com seu filho</span></div>
-              <div className="comparativo-item-sim"><IconCheck /> <span>Resultados em 2-3 semanas</span></div>
+              <div className="comparativo-item-sim"><IconCheck /> <span>Ver seu filho com outros olhos</span></div>
             </div>
           </div>
         </div>
