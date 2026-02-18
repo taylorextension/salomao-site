@@ -135,6 +135,17 @@ body {
   color: rgba(250, 249, 245, 0.6);
 }
 
+/* IMAGEM DO EBOOK */
+.hero-imagem {
+  max-width: 260px;
+  width: 75%;
+  height: auto;
+  margin: 1.25rem auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
 /* SEÇÕES */
 .section {
   width: 100%;
