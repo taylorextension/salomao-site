@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useEffect } from 'react'
 import './styles/vendas.css'
 
@@ -29,6 +30,29 @@ const IconX = () => (
   </svg>
 )
 
+const IconChevron = ({ open }: { open: boolean }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}>
+    <polyline points="6 9 12 15 18 9"/>
+  </svg>
+)
+
+// Componente FAQ Expansível
+const FAQItem = ({ pergunta, resposta }: { pergunta: string; resposta: string }) => {
+  const [open, setOpen] = useState(false)
+  
+  return (
+    <div className={`faq-item ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
+      <div className="faq-header">
+        <h3>{pergunta}</h3>
+        <IconChevron open={open} />
+      </div>
+      <div className="faq-content" style={{ maxHeight: open ? '200px' : '0', overflow: 'hidden', transition: 'maxHeight 0.3s ease' }}>
+        <p>{resposta}</p>
+      </div>
+    </div>
+  )
+}
+
 const VendasPage = () => {
   useEffect(() => {
     const viewport = document.querySelector('meta[name=viewport]')
@@ -36,6 +60,10 @@ const VendasPage = () => {
       viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     }
   }, [])
+
+  const scrollToProblema = () => {
+    document.getElementById('problema')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   const scrollToOferta = () => {
     document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })
@@ -61,16 +89,14 @@ const VendasPage = () => {
           <img src="./capa-ebook.jpg" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
         </div>
 
-        <button className="cta-button" onClick={scrollToOferta}>
+        <button className="cta-button" onClick={scrollToProblema}>
           QUERO TRANSFORMAR MEU FILHO
           <IconArrow />
         </button>
-
-        <p className="hero-aviso">desconto apenas para as primeiras 100 pessoas</p>
       </section>
 
       {/* PROBLEMA */}
-      <section className="section">
+      <section id="problema" className="section">
         <div className="section-tag">Você se identifica?</div>
         
         <div className="problemas-lista">
@@ -176,6 +202,33 @@ const VendasPage = () => {
             <strong>Patrícia D.</strong> — <span>mãe de Sofia (11 anos)</span>
           </div>
         </div>
+
+        <div className="depoimento">
+          <p className="depoimento-texto">
+            "Finalmente entendi por que meu filho reage daquele jeito. Agora sei como ajudar em vez de só frustrar."
+          </p>
+          <div className="depoimento-autor">
+            <strong>Carlos M.</strong> — <span>pai de Lucas (9 anos)</span>
+          </div>
+        </div>
+
+        <div className="depoimento">
+          <p className="depoimento-texto">
+            "O guia me deu ferramentas práticas que funcionam no dia a dia. Não é teoria, é aplicação real."
+          </p>
+          <div className="depoimento-autor">
+            <strong>Fernanda L.</strong> — <span>mãe de Maria (7 anos)</span>
+          </div>
+        </div>
+
+        <div className="depoimento">
+          <p className="depoimento-texto">
+            "Recomendo para todos os pais que se sentem perdidos. Este guia é um mapa na jornada do TDAH."
+          </p>
+          <div className="depoimento-autor">
+            <strong>Ricardo B.</strong> — <span>pai de Pedro (10 anos)</span>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
@@ -184,35 +237,30 @@ const VendasPage = () => {
         
         <h2>Perguntas Frequentes</h2>
 
-        <div className="faq-item">
-          <h3>Este guia substitui acompanhamento médico?</h3>
-          <p>Não. O guia é um complemento para você entender melhor seu filho e extrair o máximo dos profissionais. 
-          Sempre mantenha o acompanhamento médico.</p>
-        </div>
+        <FAQItem 
+          pergunta="Este guia substitui acompanhamento médico?"
+          resposta="Não. O guia é um complemento para você entender melhor seu filho e extrair o máximo dos profissionais. Sempre mantenha o acompanhamento médico."
+        />
 
-        <div className="faq-item">
-          <h3>Como isso ajuda nas consultas?</h3>
-          <p>Quando você entende o TDAH, consegue descrever sintomas com precisão, fazer perguntas relevantes 
-            e acompanhar o tratamento de forma mais efetiva.</p>
-        </div>
+        <FAQItem 
+          pergunta="Como isso ajuda nas consultas?"
+          resposta="Quando você entende o TDAH, consegue descrever sintomas com precisão, fazer perguntas relevantes e acompanhar o tratamento de forma mais efetiva."
+        />
 
-        <div className="faq-item">
-          <h3>Meu filho já faz terapia, preciso deste guia?</h3>
-          <p>A terapia é essencial, mas o que você faz em casa tem impacto maior ainda. 
-            O guia dá as ferramentas para aplicar no dia a dia o que é discutido na terapia.</p>
-        </div>
+        <FAQItem 
+          pergunta="Meu filho já faz terapia, preciso deste guia?"
+          resposta="A terapia é essencial, mas o que você faz em casa tem impacto maior ainda. O guia dá as ferramentas para aplicar no dia a dia o que é discutido na terapia."
+        />
 
-        <div className="faq-item">
-          <h3>Quanto tempo para ver resultados?</h3>
-          <p>Muitos pais relatam mudanças em 2-3 semanas, quando começam a aplicar as estratégias consistentemente. 
-            Cada criança é diferente, mas a compreensão muda tudo.</p>
-        </div>
+        <FAQItem 
+          pergunta="Quanto tempo para ver resultados?"
+          resposta="Muitos pais relatam mudanças em 2-3 semanas, quando começam a aplicar as estratégias consistentemente. Cada criança é diferente, mas a compreensão muda tudo."
+        />
 
-        <div className="faq-item">
-          <h3>Como vou receber o guia?</h3>
-          <p>Acesso imediato após a compra. Você recebe um link para baixar o PDF e pode acessar 
-            em qualquer dispositivo: celular, tablet ou computador.</p>
-        </div>
+        <FAQItem 
+          pergunta="Como vou receber o guia?"
+          resposta="Acesso imediato após a compra. Você recebe um link para baixar o PDF e pode acessar em qualquer dispositivo: celular, tablet ou computador."
+        />
       </section>
 
       {/* COMPARATIVO */}
@@ -259,12 +307,12 @@ const VendasPage = () => {
             <div className="preco-parcela">ou 12x de R$ 4,74</div>
           </div>
 
-          <button className="cta-button cta-large">
+          <button className="cta-button cta-large" onClick={scrollToOferta}>
             COMPRAR AGORA
             <IconArrow />
           </button>
 
-          <p className="urgencia-discreta">Restam poucas vagas para as primeiras 200 pessoas</p>
+          <p className="urgencia-discreta">desconto apenas para as primeiras 100 pessoas</p>
 
           <div className="garantia">
             <IconLock />
