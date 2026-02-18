@@ -354,3 +354,136 @@ ul li::before {
 .footer p {
   margin-bottom: 0.5rem;
 }
+
+/* FAQ */
+.faq-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* COMPARATIVO */
+.comparativo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.comparativo-nao,
+.comparativo-sim {
+  padding: 1.5rem;
+  border-radius: var(--raio);
+}
+
+.comparativo-nao {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+
+.comparativo-nao h3 {
+  font-size: 1rem;
+  color: var(--cor-texto-claro);
+  margin-bottom: 1rem;
+}
+
+.comparativo-nao ul {
+  margin: 0;
+}
+
+.comparativo-nao li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: #999;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.comparativo-nao li svg {
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+.comparativo-sim {
+  background: var(--cor-primaria);
+  color: white;
+  position: relative;
+}
+
+.recomendado {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.75rem;
+  background: var(--cor-destaque);
+  color: var(--cor-primaria);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+.comparativo-sim h3 {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.comparativo-sim ul {
+  margin: 0;
+}
+
+.comparativo-sim li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  color: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 0.9rem;
+}
+
+.comparativo-sim li svg {
+  color: var(--cor-destaque);
+  flex-shrink: 0;
+}
+
+/* URGENCIA */
+.urgencia {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid var(--cor-destaque);
+  border-radius: var(--raio);
+  font-size: 0.9rem;
+}
+
+.urgencia strong {
+  color: var(--cor-destaque);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 640px) {
+  .comparativo {
+    grid-template-columns: 1fr;
+  }
+}

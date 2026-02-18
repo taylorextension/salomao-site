@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import './styles/vendas.css'
 
-// Ícones SVG
+// Icones SVG
 const IconArrow = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="5" y1="12" x2="19" y2="12"/>
@@ -13,6 +13,19 @@ const IconLock = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>
+)
+
+const IconCheck = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12"/>
+  </svg>
+)
+
+const IconX = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/>
+    <line x1="6" y1="6" x2="18" y2="18"/>
   </svg>
 )
 
@@ -35,7 +48,7 @@ const VendasPage = () => {
         <div className="hero-badge">Garantia de 7 Dias</div>
         
         <h1 className="hero-title">
-          Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
+          Descubra O Segredo Que Pais De Crianças Com TDAH Estao Usando Para
           <span className="highlight"> Transformar Seus Filhos Em Apenas 2-3 Semanas</span>
         </h1>
 
@@ -98,95 +111,27 @@ const VendasPage = () => {
         
         <h2>O "Guia Digital: TDAH" e uma conversa franca, acolhedora e baseada em ciencia.</h2>
 
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">01</span>
-            <span className="modulo-titulo">O Que E TDAH (De Verdade)?</span>
+        {[
+          { num: "01", titulo: "O Que E TDAH (De Verdade)?", desc: "Entenda a neurobiologia por tras do TDAH sem termos medicos complicados.", ganho: "Clareza para deixar a culpa de lado." },
+          { num: "02", titulo: "Desatencao ou Desinteresse?", desc: "Aprenda a distinguir quando e TDAH e quando e falta de estimulo.", ganho: "Capacidade de reativar o interesse." },
+          { num: "03", titulo: "O Cerebro do Seu Filho", desc: "Uma viagem pela neurociencia acessivel. Entenda dopamina e neuroplasticidade.", ganho: "Compreensao profunda para lutar POR seu filho." },
+          { num: "04", titulo: "O Poder do Reconhecimento", desc: "A 'Proporcao Magica' de Gottman. Aprenda a validar seu filho.", ganho: "Relacionamento profundo baseado em confianca." },
+          { num: "05", titulo: "Escola: Aliada ou Vilã?", desc: "Conheca a Lei 14.254/2021. Aprenda que adaptacoes pedir e como negociar.", ganho: "Um filho se sentindo apoiado na escola." },
+          { num: "06", titulo: "Medicacao: Sim ou Nao?", desc: "Tudo sobre medicacao e suplementos com evidencia cientifica.", ganho: "Decisoes informadas com os medicos." },
+          { num: "07", titulo: "Suplementos e Alimentacao", desc: "O que a ciencia diz sobre omega-3, zinco, magnesio e alimentacao.", ganho: "O que incluir e o que evitar na dieta." },
+          { num: "08", titulo: "Ansiedade, Sono e Emocoes", desc: "O TDAH raramente viaja sozinho. Entenda como ansiedade e sono afetam tudo.", ganho: "Menos explosoes, mais noites tranquilas." },
+          { num: "09", titulo: "3 Passos Para Lidar com TDAH", desc: "Um framework simples: Entender → Observar → Atuar. Plano de acao de 7 dias.", ganho: "Saber exatamente o que fazer." },
+          { num: "10", titulo: "Voce Nao Esta Sozinho", desc: "TDAH como potencial. Celebrando pequenas vitorias. Construindo uma rede de apoio.", ganho: "Esperanca e comunidade." }
+        ].map((mod) => (
+          <div className="modulo" key={mod.num}>
+            <div className="modulo-header">
+              <span className="modulo-num">{mod.num}</span>
+              <span className="modulo-titulo">{mod.titulo}</span>
+            </div>
+            <p className="modulo-desc">{mod.desc}</p>
+            <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> {mod.ganho}</div>
           </div>
-          <p className="modulo-desc">Entenda a neurobiologia por tras do TDAH sem termos medicos complicados.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Clareza para deixar a culpa de lado.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">02</span>
-            <span className="modulo-titulo">Desatencao ou Desinteresse?</span>
-          </div>
-          <p className="modulo-desc">Aprenda a distinguir quando e TDAH e quando e falta de estimulo.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Capacidade de reativar o interesse.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">03</span>
-            <span className="modulo-titulo">O Cerebro do Seu Filho</span>
-          </div>
-          <p className="modulo-desc">Uma viagem pela neurociencia acessivel. Entenda dopamina e neuroplasticidade.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Compreensao profunda para lutar POR seu filho.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">04</span>
-            <span className="modulo-titulo">O Poder do Reconhecimento</span>
-          </div>
-          <p className="modulo-desc">A "Proporcao Magica" de Gottman. Aprenda a validar seu filho.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Relacionamento profundo baseado em confianca.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">05</span>
-            <span className="modulo-titulo">Escola: Aliada ou Vilã?</span>
-          </div>
-          <p className="modulo-desc">Conheca a Lei 14.254/2021. Aprenda que adaptacoes pedir e como negociar.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Um filho se sentindo apoiado na escola.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">06</span>
-            <span className="modulo-titulo">Medicacao: Sim ou Nao?</span>
-          </div>
-          <p className="modulo-desc">Tudo sobre medicacao e suplementos com evidencia cientifica.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Decisoes informadas com os medicos.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">07</span>
-            <span className="modulo-titulo">Suplementos e Alimentacao</span>
-          </div>
-          <p className="modulo-desc">O que a ciencia diz sobre omega-3, zinco, magnesio e alimentacao.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> O que incluir e o que evitar na dieta.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">08</span>
-            <span className="modulo-titulo">Ansiedade, Sono e Emocoes</span>
-          </div>
-          <p className="modulo-desc">O TDAH raramente viaja sozinho. Entenda como ansiedade e sono afetam tudo.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Menos explosoes, mais noites tranquilas.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">09</span>
-            <span className="modulo-titulo">3 Passos Para Lidar com TDAH</span>
-          </div>
-          <p className="modulo-desc">Um framework simples: Entender → Observar → Atuar. Plano de acao de 7 dias.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Saber exatamente o que fazer.</div>
-        </div>
-
-        <div className="modulo">
-          <div className="modulo-header">
-            <span className="modulo-num">10</span>
-            <span className="modulo-titulo">Voce Nao Esta Sozinho</span>
-          </div>
-          <p className="modulo-desc">TDAH como potencial. Celebrando pequenas vitorias. Construindo uma rede de apoio.</p>
-          <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> Esperanca e comunidade.</div>
-        </div>
+        ))}
       </section>
 
       {/* DEPOIMENTOS */}
@@ -197,31 +142,97 @@ const VendasPage = () => {
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "Quando comecei a entender que meu filho nao estava sendo desobediente, 
-            mas que o cerebro dele funcionava diferente, minha abordagem mudou completamente."
+            "Meu filho faz terapia ha anos, mas so quando comecei a aplicar as estrategias em casa vimos resultados. 
+            A evolucao foi exponencial."
           </p>
           <div className="depoimento-autor">
-            <strong>Carla M.</strong> — <span>mae de Pedro (9 anos)</span>
+            <strong>Andre S.</strong> — <span>pai de Gabriel (8 anos)</span>
           </div>
         </div>
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "Antes eu ia aos medicos sem saber o que perguntar. Depois que entendi o basico da neurociencia, 
-            consegui descrever os sintomas com precisao."
+            "Passei meses culpando os medicos. Hoje entendo que o tratamento e uma equipe: medicos, terapeutas, 
+            escola e eu. Este guia me ensinou a ser a ponte."
           </p>
           <div className="depoimento-autor">
-            <strong>Rodrigo T.</strong> — <span>pai de Valentina (7 anos)</span>
+            <strong>Juliana R.</strong> — <span>mae de Enzo (6 anos)</span>
           </div>
         </div>
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "A escola sempre reclamava. Com as informacoes deste guia, soube pedir as adaptacoes certas citando a lei. 
-            Hoje temos uma professora parceira."
+            "As manhas eram um caos de gritos e atrasos. Com a tecnica do 'Reinicio Calmante' do guia, 
+            hoje saimos de casa sorrindo. Parece magica, mas e so entender o cerebro deles."
           </p>
           <div className="depoimento-autor">
-            <strong>Fernanda L.</strong> — <span>mae de Lucas (10 anos)</span>
+            <strong>Patricia D.</strong> — <span>mae de Sofia (11 anos)</span>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section">
+        <div className="section-tag">Duvidas Frequentes</div>
+        
+        <h2>Perguntas Frequentes</h2>
+
+        <div className="faq-item">
+          <h3>Este guia substitui acompanhamento medico?</h3>
+          <p>Nao. O guia e um complemento para voce entender melhor seu filho e extrair o maximo dos profissionais. 
+          Sempre mantenha o acompanhamento medico.</p>
+        </div>
+
+        <div className="faq-item">
+          <h3>Como isso ajuda nas consultas?</h3>
+          <p>Quando voce entende o TDAH, consegue descrever sintomas com precisao, fazer perguntas relevantes 
+            e acompanhar o tratamento de forma mais efetiva.</p>
+        </div>
+
+        <div className="faq-item">
+          <h3>Meu filho ja faz terapia, preciso deste guia?</h3>
+          <p>A terapia e essencial, mas o que voce faz em casa tem impacto maior ainda. 
+            O guia da as ferramentas para aplicar no dia a dia o que e discutido na terapia.</p>
+        </div>
+
+        <div className="faq-item">
+          <h3>Quanto tempo para ver resultados?</h3>
+          <p>Muitos pais relatam mudancas em 2-3 semanas, quando comecam a aplicar as estrategias consistentemente. 
+            Cada crianca e diferente, mas a compreensao muda tudo.</p>
+        </div>
+
+        <div className="faq-item">
+          <h3>Como vou receber o guia?</h3>
+          <p>Acesso imediato apos a compra. Voce recebe um link para baixar o PDF e pode acessar 
+            em qualquer dispositivo: celular, tablet ou computador.</p>
+        </div>
+      </section>
+
+      {/* COMPARATIVO */}
+      <section className="section section-cinza">
+        <div className="section-tag">Oferta de Lancamento</div>
+        
+        <h2>Escolha Agora...</h2>
+
+        <div className="comparativo">
+          <div className="comparativo-nao">
+            <h3>Continuar Como Esta</h3>
+            <ul>
+              <li><IconX /> Continuar frustrado</li>
+              <li><IconX /> Continuar sentindo que nao faz o suficiente</li>
+              <li><IconX /> Mesmos resultados</li>
+            </ul>
+          </div>
+
+          <div className="comparativo-sim">
+            <div className="recomendado">RECOMENDADO</div>
+            <h3>Transformar Hoje</h3>
+            
+            <ul>
+              <li><IconCheck /> Investir no conhecimento</li>
+              <li><IconCheck /> Mudar sua relacao com seu filho</li>
+              <li><IconCheck /> Resultados em 2-3 semanas</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -229,28 +240,33 @@ const VendasPage = () => {
       {/* OFERTA */}
       <section id="oferta" className="oferta">
         <div className="oferta-box">
-          <div className="oferta-tag">Oferta Especial</div>
+          <div className="oferta-tag">Oferta de Lancamento</div>
           
           <h2 className="oferta-titulo">Guia Digital: TDAH</h2>
           
-          <p className="oferta-subtitle">O guia completo para pais que querem entender e ajudar seus filhos</p>
+          <p className="oferta-subtitle">Entenda seu filho tao profundamente que voce se torna o melhor aliado de quem o ajuda.</p>
 
           <div className="preco">
-            <div className="preco-antigo">De R$ 197,00</div>
-            <div className="preco-novo">R$ 97,00</div>
-            <div className="preco-parcela">ou 12x de R$ 9,74</div>
+            <div className="preco-antigo">De R$ 97,00</div>
+            <div className="preco-novo">R$ 47,00</div>
+            <div className="preco-parcela">ou 12x de R$ 4,74</div>
           </div>
 
-          <button className="cta-button">
-            QUERO ACESSO AGORA
+          <button className="cta-button cta-large">
+            COMPRAR AGORA
             <IconArrow />
           </button>
+
+          <div className="urgencia">
+            <strong>⚡ Este preco e por tempo limitado as primeiras 200 pessoas.</strong>
+          </div>
 
           <div className="garantia">
             <IconLock />
             <div className="garantia-texto">
-              <strong>Garantia Blindada de 7 Dias</strong>
-              <p>Se voce nao ficar satisfeito, devolvemos 100% do seu dinheiro.</p>
+              <strong>Garantia de 7 Dias</strong>
+              <p>Se em 7 dias voce nao sentir que este guia transformou sua compreensao sobre seu filho, 
+                devolvemos 100% do seu dinheiro. Sem perguntas.</p>
             </div>
           </div>
         </div>
@@ -258,8 +274,8 @@ const VendasPage = () => {
 
       {/* FOOTER */}
       <footer className="footer">
-        <p>2025 Guia Digital TDAH. Todos os direitos reservados.</p>
-        <p>Este material nao substitui orientacao medica.</p>
+        <p>2026 — Todos os direitos reservados.</p>
+        <p>Este site nao garante resultados especificos. Resultados podem variar. Material para fins educacionais.</p>
       </footer>
     </div>
   )
