@@ -73,7 +73,7 @@ const VendasPage = () => {
     <div className="vendas-page">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge">Guia para Pais</div>
+        <div className="hero-badge">Entendendo o TDAH</div>
         
         <h1 className="hero-title">
           Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
@@ -142,7 +142,7 @@ const VendasPage = () => {
       <section className="section">
         <div className="section-tag">O Que Você Vai Encontrar</div>
         
-        <h2>O "Guia Digital: TDAH" é uma conversa franca, acolhedora e baseada em ciência.</h2>
+        <h2>O "Entendendo o TDAH" é uma conversa franca, acolhedora e baseada em ciência.</h2>
 
         {[
           { num: "01", titulo: "O Que É TDAH (De Verdade)?", desc: "Entenda a neurobiologia por trás do TDAH sem termos médicos complicados.", ganho: "Clareza para deixar a culpa de lado." },
