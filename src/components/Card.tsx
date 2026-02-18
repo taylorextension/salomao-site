@@ -11,38 +11,31 @@ interface CardProps {
 
 export const Card = ({ children, icon, title, description, style }: CardProps) => {
   const cardStyles: CSSProperties = {
-    backgroundColor: tokens.colors.white,
-    padding: tokens.spacing.xl,
-    border: `1px solid ${tokens.colors.sandDark}`,
-    borderRadius: tokens.radii.sm,
-    transition: `all ${tokens.transitions.normal}`,
+    backgroundColor: tokens.colors.bg.card,
+    padding: tokens.spacing.lg,
+    border: '1px solid rgba(34, 211, 238, 0.1)',
+    borderRadius: tokens.radii.lg,
+    transition: 'all 0.2s ease',
     ...style
   }
   
-  const iconStyles: CSSProperties = {
-    width: '48px',
-    height: '48px',
-    marginBottom: tokens.spacing.lg,
-    color: tokens.colors.forest
-  }
-  
   const titleStyles: CSSProperties = {
-    fontFamily: tokens.typography.fontFamily.serif,
-    fontSize: tokens.typography.sizes['2xl'],
+    fontSize: tokens.typography.sizes.lg,
     fontWeight: tokens.typography.weights.semibold,
-    color: tokens.colors.forest,
-    marginBottom: tokens.spacing.sm
+    color: tokens.colors.text.primary,
+    marginBottom: tokens.spacing.sm,
+    marginTop: icon ? tokens.spacing.md : 0
   }
   
   const descStyles: CSSProperties = {
-    fontSize: tokens.typography.sizes.base,
-    color: tokens.colors.earth,
-    lineHeight: tokens.typography.lineHeights.relaxed
+    fontSize: tokens.typography.sizes.sm,
+    color: tokens.colors.text.secondary,
+    lineHeight: 1.6
   }
   
   return (
     <div style={cardStyles} className="feature-card">
-      {icon && <div style={iconStyles}>{icon}</div>}
+      {icon}
       <h3 style={titleStyles}>{title}</h3>
       <p style={descStyles}>{description}</p>
       {children}

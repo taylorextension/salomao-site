@@ -1,8 +1,8 @@
 import { tokens } from '../styles/tokens'
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 interface ButtonProps {
-  children: React.ReactNode
+  children: ReactNode
   variant?: 'primary' | 'secondary' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   href?: string
@@ -24,9 +24,9 @@ export const Button = ({
     justifyContent: 'center',
     gap: tokens.spacing.sm,
     fontFamily: tokens.typography.fontFamily.sans,
-    fontWeight: tokens.typography.weights.medium,
-    borderRadius: tokens.radii.sm,
-    transition: `all ${tokens.transitions.normal}`,
+    fontWeight: tokens.typography.weights.semibold,
+    borderRadius: tokens.radii.md,
+    transition: 'all 0.2s ease',
     cursor: 'pointer',
     border: 'none',
     textDecoration: 'none'
@@ -40,20 +40,18 @@ export const Button = ({
   
   const variantStyles = {
     primary: {
-      backgroundColor: tokens.colors.forest,
-      color: tokens.colors.sand,
-      ':hover': { backgroundColor: tokens.colors.moss }
+      background: 'linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%)',
+      color: 'white',
+      boxShadow: '0 4px 20px rgba(34, 211, 238, 0.3)'
     },
     secondary: {
       backgroundColor: 'transparent',
-      color: tokens.colors.earth,
-      border: `1px solid ${tokens.colors.earth}`,
-      ':hover': { backgroundColor: tokens.colors.earth, color: tokens.colors.sand }
+      color: tokens.colors.accent.cyan,
+      border: '1px solid rgba(34, 211, 238, 0.3)'
     },
     ghost: {
       backgroundColor: 'transparent',
-      color: tokens.colors.forest,
-      ':hover': { backgroundColor: tokens.colors.sandDark }
+      color: tokens.colors.text.secondary
     }
   }
   

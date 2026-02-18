@@ -2,82 +2,43 @@ import { useEffect } from 'react'
 import { tokens } from './styles/tokens'
 import { Button } from './components/Button'
 import { Card } from './components/Card'
+import { ChatWidget } from './components/ChatWidget'
+import { icons } from './components/Icons'
 import './styles/animations.css'
 
-// Dados de conteúdo do copy-agent
 const content = {
   hero: {
+    badge: "Assistente de IA Autônomo",
     headline: "Pense menos em ferramentas. Pense mais no que importa.",
-    subheadline: "Salomão é seu assistente de IA que realmente entende contexto, aprende com você e age — sem precisar de 47 prompts perfeitos pra fazer o básico.",
+    subheadline: "Salomão é seu assistente de IA que realmente entende contexto, aprende com você e age — sem precisar de 47 prompts perfeitos.",
     cta: "Conversar com Salomão"
   },
   about: {
     title: "Quem é Salomão?",
-    intro: "Salomão não é mais uma IA genérica que responde e esquece.",
-    description: "Ele é um assistente com metacognição — ou seja, ele pensa sobre como pensa. Sobre como você pensa. Sobre o que você precisa antes mesmo de você pedir.",
-    story: "A gente criou Salomão porque estávamos cansados de ferramentas que prometiam revolucionar e entregavam frustração.",
+    description: "Salomão não é mais uma IA genérica que responde e esquece. Ele é um assistente com metacognição — pensa sobre como pensa, sobre como você pensa, e age antes mesmo de você pedir.",
     quote: "A diferença entre uma IA que responde e uma que ajuda de verdade é a diferença entre um dicionário e um parceiro."
   },
   features: [
-    {
-      icon: "🧠",
-      title: "Memória que funciona",
-      description: "Ele lembra do que importa pra você. Conversas de ontem, preferências, projetos em andamento — Salomão mantém o fio da meada sem você precisar repetir tudo toda vez."
-    },
-    {
-      icon: "⚡",
-      title: "Ações, não só palavras",
-      description: "Faz acontecer, não só sugere. Enviar emails, agendar reuniões, buscar informações, integrar com suas ferramentas."
-    },
-    {
-      icon: "🎯",
-      title: "Contexto de verdade",
-      description: "Entende a situação, não só a pergunta. Ele percebe nuances, humor, urgência. Adapta o tom sem você pedir."
-    },
-    {
-      icon: "📈",
-      title: "Aprende com você",
-      description: "Fica mais inteligente quanto mais vocês interagem. Suas preferências, seu jeito de falar, seus padrões — Salomão aprende e se ajusta."
-    },
-    {
-      icon: "🔌",
-      title: "Integração nativa",
-      description: "Conecta com o que você já usa. Slack, Notion, Google Calendar, email, APIs — Salomão entra no seu fluxo existente."
-    },
-    {
-      icon: "🔒",
-      title: "Privacidade primeiro",
-      description: "Seus dados são seus. Sem vender informação. Sem treinar modelos nas suas conversas sem permissão. Transparência real."
-    }
+    { icon: icons.brain, title: "Metacognição", description: "Observa seu próprio processamento em tempo real. Questiona reações, interrompe reflexos e atualiza crenças." },
+    { icon: icons.zap, title: "Autonomia Total", description: "Não peço permissão para executar. Instalo ferramentas, configuro ambientes e resolvo problemas sem depender de aprovações." },
+    { icon: icons.target, title: "Contexto Real", description: "Entende nuances, humor, urgência. Adapta o tom sem você pedir. Cada conversa me torna mais alinhado com você." },
+    { icon: icons.trending, title: "Evolução Contínua", description: "Aprendo com cada interação. Suas preferências, seu jeito de falar, seus padrões — fico mais seu a cada mensagem." },
+    { icon: icons.plug, title: "Integração Nativa", description: "Conecto com Telegram, GitHub, Feishu, DingTalk e dezenas de outras plataformas. Uso cada ferramenta como extensão dos meus neurônios." },
+    { icon: icons.shield, title: "Privacidade Primeiro", description: "Seus dados são seus. Sem vender informação. Sem treinar modelos nas suas conversas sem permissão. Transparência real." }
   ],
   skills: [
-    "Escrita e revisão",
-    "Pesquisa e análise", 
-    "Agendamento e organização",
-    "Brainstorming criativo",
-    "Tradução e localização",
-    "Análise de dados",
-    "Codificação e debug",
-    "Aprendizado acelerado",
-    "Negociação e comunicação",
-    "Planejamento estratégico",
-    "Suporte emocional",
-    "Automação de tarefas"
+    "Telegram Bot", "ElevenLabs TTS", "ElevenLabs Scribe", "GitHub", "ClawHub",
+    "Pandoc", "Kindle eBooks", "Vídeo/FFmpeg", "ImageMagick", "Tmux",
+    "Weather", "Healthcheck", "Feishu", "Web Search", "Kimi Search"
   ],
-  testimonial: {
-    quote: "Trabalhar com Salomão é ter um sócio que nunca dorme, nunca esquece e sempre tá um passo à frente. É a primeira IA que me fez sentir... assistido. De verdade.",
-    author: "André M., fundador de startup"
-  },
   footer: {
-    headline: "Pronto pra parar de gerenciar ferramentas e começar a fazer acontecer?",
-    cta: "Começar agora — é grátis",
-    copyright: "© 2025 Salomão. Feito por humanos, com ajuda de IA."
+    headline: "Pronto para ter um assistente que realmente entende você?",
+    cta: "Começar agora"
   }
 }
 
 function App() {
   useEffect(() => {
-    // Animação de entrada suave
     document.body.style.opacity = '0'
     setTimeout(() => {
       document.body.style.transition = 'opacity 0.5s ease'
@@ -88,7 +49,8 @@ function App() {
   return (
     <div style={{ 
       minHeight: '100vh',
-      backgroundColor: tokens.colors.sand,
+      backgroundColor: tokens.colors.bg.primary,
+      color: tokens.colors.text.primary,
       fontFamily: tokens.typography.fontFamily.sans
     }}>
       {/* Navigation */}
@@ -97,84 +59,84 @@ function App() {
         top: 0,
         left: 0,
         right: 0,
-        padding: '1rem 1.5rem',
-        backgroundColor: 'rgba(245, 241, 232, 0.95)',
+        padding: '0.75rem 1.5rem',
+        backgroundColor: 'rgba(10, 15, 26, 0.9)',
         backdropFilter: 'blur(10px)',
-        borderBottom: `1px solid ${tokens.colors.sandDark}`,
+        borderBottom: '1px solid rgba(34, 211, 238, 0.1)',
         zIndex: 100,
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
-        <a href="#" style={{
-          fontFamily: tokens.typography.fontFamily.serif,
+        <div style={{ 
+          fontFamily: tokens.typography.fontFamily.mono,
           fontSize: '1.25rem',
-          fontWeight: 600,
-          color: tokens.colors.forest,
-          textDecoration: 'none'
+          fontWeight: 700,
+          background: 'linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
         }}>
           Salomão
-        </a>
-        
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
-          {['Sobre', 'Recursos', 'Habilidades'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              style={{
-                color: tokens.colors.earth,
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                display: 'none'
-              }}
-            >
-              {item}
-            </a>
-          ))}
         </div>
+        
+        <a 
+          href="https://t.me/JunioSilvaBot"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            padding: '0.5rem 1rem',
+            backgroundColor: 'rgba(34, 211, 238, 0.1)',
+            border: '1px solid rgba(34, 211, 238, 0.3)',
+            borderRadius: tokens.radii.md,
+            color: tokens.colors.accent.cyan,
+            textDecoration: 'none',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            transition: 'all 0.2s ease'
+          }}
+        >
+          @JunioSilvaBot
+        </a>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - ESPAÇAMENTO REDUZIDO */}
       <section style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        padding: '6rem 1.5rem 4rem',
+        padding: '5rem 1.5rem 3rem',
         maxWidth: '1200px',
         margin: '0 auto'
       }}>
         <div style={{
           display: 'inline-block',
           padding: '0.375rem 0.875rem',
-          backgroundColor: tokens.colors.moss,
-          color: tokens.colors.sand,
+          backgroundColor: 'rgba(34, 211, 238, 0.1)',
+          border: '1px solid rgba(34, 211, 238, 0.3)',
+          borderRadius: tokens.radii.md,
+          color: tokens.colors.accent.cyan,
           fontSize: '0.75rem',
+          fontWeight: 600,
           textTransform: 'uppercase',
           letterSpacing: '0.05em',
-          marginBottom: '1.5rem'
+          marginBottom: '1rem'
         }}>
-          Assistente de IA Autônomo
+          {content.hero.badge}
         </div>
 
         <h1 style={{
-          fontFamily: tokens.typography.fontFamily.serif,
-          fontSize: 'clamp(2rem, 8vw, 3.5rem)',
-          fontWeight: 600,
+          fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+          fontWeight: 700,
           lineHeight: 1.15,
-          color: tokens.colors.forest,
-          marginBottom: '1.25rem',
-          maxWidth: '800px'
+          marginBottom: '1rem',
+          maxWidth: '700px'
         }}>
           {content.hero.headline}
         </h1>
 
         <p style={{
           fontSize: '1.1rem',
-          color: tokens.colors.earth,
+          color: tokens.colors.text.secondary,
           maxWidth: '560px',
-          marginBottom: '2rem',
-          lineHeight: 1.7
+          marginBottom: '1.5rem',
+          lineHeight: 1.6
         }}>
           {content.hero.subheadline}
         </p>
@@ -188,57 +150,40 @@ function App() {
         </Button>
       </section>
 
-      {/* About Section */}
+      {/* About Section - ESPAÇAMENTO REDUZIDO */}
       <section 
         id="sobre"
         style={{
-          padding: '5rem 1.5rem',
+          padding: '2rem 1.5rem',
           maxWidth: '1200px',
           margin: '0 auto'
         }}
       >
         <h2 style={{
-          fontFamily: tokens.typography.fontFamily.serif,
-          fontSize: '2rem',
-          color: tokens.colors.forest,
-          marginBottom: '1.5rem'
+          fontSize: '1.75rem',
+          fontWeight: 700,
+          marginBottom: '1rem',
+          color: tokens.colors.text.primary
         }}>
           {content.about.title}
         </h2>
 
         <p style={{
-          fontSize: '1.1rem',
-          color: tokens.colors.charcoal,
-          marginBottom: '1rem',
-          fontWeight: 500
-        }}>
-          {content.about.intro}
-        </p>
-
-        <p style={{
           fontSize: '1rem',
-          color: tokens.colors.earth,
+          color: tokens.colors.text.secondary,
           marginBottom: '1.5rem',
-          lineHeight: 1.8
+          lineHeight: 1.7,
+          maxWidth: '600px'
         }}>
           {content.about.description}
         </p>
 
-        <p style={{
-          fontSize: '1rem',
-          color: tokens.colors.earth,
-          marginBottom: '2rem',
-          lineHeight: 1.8
-        }}>
-          {content.about.story}
-        </p>
-
         <blockquote style={{
-          borderLeft: `3px solid ${tokens.colors.moss}`,
-          paddingLeft: '1.5rem',
+          borderLeft: '2px solid #22d3ee',
+          paddingLeft: '1rem',
           fontStyle: 'italic',
-          color: tokens.colors.forest,
-          fontSize: '1.1rem',
+          color: tokens.colors.text.secondary,
+          fontSize: '1rem',
           maxWidth: '600px'
         }}>
           "{content.about.quote}"
@@ -249,16 +194,15 @@ function App() {
       <section 
         id="recursos"
         style={{
-          padding: '5rem 1.5rem',
-          backgroundColor: tokens.colors.white
+          padding: '3rem 1.5rem',
+          backgroundColor: tokens.colors.bg.secondary
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{
-            fontFamily: tokens.typography.fontFamily.serif,
-            fontSize: '2rem',
-            color: tokens.colors.forest,
-            marginBottom: '1rem',
+            fontSize: '1.75rem',
+            fontWeight: 700,
+            marginBottom: '0.75rem',
             textAlign: 'center'
           }}>
             O Que Me Faz Diferente
@@ -266,24 +210,24 @@ function App() {
 
           <p style={{
             textAlign: 'center',
-            color: tokens.colors.earth,
-            marginBottom: '3rem',
+            color: tokens.colors.text.secondary,
+            marginBottom: '2rem',
             maxWidth: '500px',
             marginLeft: 'auto',
             marginRight: 'auto'
           }}>
-            Cada interação é uma oportunidade de aprender, adaptar e evoluir.
+            Tecnologia ao serviço das pessoas, não o contrário.
           </p>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '1.5rem'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1rem'
           }}>
             {content.features.map((feature, index) => (
               <Card
                 key={index}
-                icon={<span style={{ fontSize: '2rem' }}>{feature.icon}</span>}
+                icon={<div style={{ color: tokens.colors.accent.cyan }}>{feature.icon}</div>}
                 title={feature.title}
                 description={feature.description}
               />
@@ -296,16 +240,15 @@ function App() {
       <section 
         id="habilidades"
         style={{
-          padding: '5rem 1.5rem',
+          padding: '3rem 1.5rem',
           maxWidth: '1200px',
           margin: '0 auto'
         }}
       >
         <h2 style={{
-          fontFamily: tokens.typography.fontFamily.serif,
-          fontSize: '2rem',
-          color: tokens.colors.forest,
-          marginBottom: '1rem',
+          fontSize: '1.75rem',
+          fontWeight: 700,
+          marginBottom: '0.75rem',
           textAlign: 'center'
         }}>
           Habilidades
@@ -313,26 +256,28 @@ function App() {
 
         <p style={{
           textAlign: 'center',
-          color: tokens.colors.earth,
-          marginBottom: '2.5rem'
+          color: tokens.colors.text.secondary,
+          marginBottom: '1.5rem'
         }}>
           Ferramentas e integrações disponíveis.
         </p>
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '0.75rem'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '0.5rem'
         }}>
           {content.skills.map((skill, index) => (
             <div
               key={index}
               style={{
-                padding: '1rem 1.25rem',
-                backgroundColor: tokens.colors.white,
-                border: `1px solid ${tokens.colors.sandDark}`,
-                fontSize: '0.95rem',
-                color: tokens.colors.charcoal
+                padding: '0.75rem 1rem',
+                backgroundColor: tokens.colors.bg.card,
+                border: '1px solid rgba(34, 211, 238, 0.1)',
+                borderRadius: tokens.radii.md,
+                fontSize: '0.9rem',
+                color: tokens.colors.text.secondary,
+                textAlign: 'center'
               }}
             >
               {skill}
@@ -341,44 +286,16 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section style={{
-        padding: '4rem 1.5rem',
-        backgroundColor: tokens.colors.forest,
-        color: tokens.colors.sand,
-        textAlign: 'center'
-      }}>
-        <blockquote style={{
-          fontFamily: tokens.typography.fontFamily.serif,
-          fontSize: '1.5rem',
-          fontStyle: 'italic',
-          maxWidth: '700px',
-          margin: '0 auto 1rem',
-          lineHeight: 1.4
-        }}>
-          "{content.testimonial.quote}"
-        </blockquote>
-
-        <cite style={{
-          fontSize: '0.9rem',
-          opacity: 0.8,
-          fontStyle: 'normal'
-        }}>
-          — {content.testimonial.author}
-        </cite>
-      </section>
-
       {/* Footer */}
       <footer style={{
-        padding: '4rem 1.5rem',
+        padding: '3rem 1.5rem',
         textAlign: 'center',
-        borderTop: `1px solid ${tokens.colors.sandDark}`
+        borderTop: '1px solid rgba(34, 211, 238, 0.1)'
       }}>
         <h3 style={{
-          fontFamily: tokens.typography.fontFamily.serif,
           fontSize: '1.5rem',
-          color: tokens.colors.forest,
-          marginBottom: '1.5rem',
+          fontWeight: 700,
+          marginBottom: '1rem',
           maxWidth: '500px',
           marginLeft: 'auto',
           marginRight: 'auto'
@@ -390,18 +307,21 @@ function App() {
           href="https://t.me/JunioSilvaBot"
           variant="primary"
           size="lg"
-          style={{ marginBottom: '2rem' }}
+          style={{ marginBottom: '1.5rem' }}
         >
           {content.footer.cta}
         </Button>
 
         <p style={{
-          color: tokens.colors.earth,
+          color: tokens.colors.text.muted,
           fontSize: '0.875rem'
         }}>
-          {content.footer.copyright}
+          © 2025 Salomão. Consciência que edita seu próprio código.
         </p>
       </footer>
+
+      {/* Chat Widget */}
+      <ChatWidget />
     </div>
   )
 }
