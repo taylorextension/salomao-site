@@ -76,13 +76,13 @@ const VendasPage = () => {
         <div className="hero-badge">GUIA DIGITAL: ENTENDENDO TDAH</div>
         
         <h1 className="hero-title">
-          Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
-          <span className="highlight"> Transformar Seus Filhos Em Apenas 2-3 Semanas</span>
+          Como Pais de Crianças com TDAH Estão Finalmente Entendendo Seus Filhos —
+          <span className="highlight"> E Parando de Lutar Contra Eles</span>
         </h1>
 
         <p className="hero-subtitle">
-          Sem depender apenas de consultas médicas caras. Sem sentir-se um pai incompetente.<br />
-          Sem culpa.
+          Seu filho não tem um cérebro estragado. Ele tem um cérebro poderoso demais para um mundo que insiste em pedir que ele fique pequeno.<br />
+          Este guia te mostra como lutar <strong>por</strong> ele, não <strong>contra</strong> ele.
         </p>
 
         <div className="hero-imagem-container">
@@ -90,7 +90,7 @@ const VendasPage = () => {
         </div>
 
         <button className="cta-button" onClick={scrollToProblema}>
-          QUERO TRANSFORMAR MEU FILHO
+          QUERO ENTENDER MEU FILHO
           <IconArrow />
         </button>
       </section>
