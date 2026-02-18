@@ -53,7 +53,8 @@ const VendasPage = () => {
         </h1>
 
         <p className="hero-subtitle">
-          Sem depender apenas de consultas médicas caras. Sem sentir-se um pai incompetente. Sem culpa.
+          Sem depender apenas de consultas médicas caras. Sem sentir-se um pai incompetente.<br />
+          Sem culpa.
         </p>
 
         <div className="hero-imagem-container">
