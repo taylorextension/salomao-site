@@ -45,7 +45,7 @@ const VendasPage = () => {
     <div className="vendas-page">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge">Guia pra Paz</div>
+        <div className="hero-badge">Guia para Pais</div>
         
         <h1 className="hero-title">
           Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
