@@ -81,7 +81,7 @@ const VendasPage = () => {
         </h1>
 
         <p className="hero-subtitle">
-          Seu filho não tem um cérebro estragado. Ele tem um cérebro poderoso demais para um mundo que insiste em pedir que ele fique pequeno.<br />
+          Seu filho não tem um cérebro com defeito. Ele tem um cérebro poderoso demais para um mundo que insiste em pedir que ele fique pequeno.<br />
           Este guia te mostra como lutar <strong>por</strong> ele, não <strong>contra</strong> ele.
         </p>
 
