@@ -65,7 +65,7 @@ const VendasPage = () => {
           <IconArrow />
         </button>
 
-        <p className="hero-aviso">Restam poucas vagas para as primeiras 200 pessoas</p>
+        <p className="hero-aviso">desconto apenas para as primeiras 100 pessoas</p>
       </section>
 
       {/* PROBLEMA */}
