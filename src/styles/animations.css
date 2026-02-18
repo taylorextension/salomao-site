@@ -1,0 +1,62 @@
+/* Animações suaves e naturais */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Foco visível para acessibilidade */
+:focus-visible {
+  outline: 2px solid #4a5d4a;
+  outline-offset: 2px;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: #4a5d4a;
+  color: #f5f1e8;
+}
+
+/* Hover effects para cards */
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Responsividade */
+@media (min-width: 640px) {
+  nav .nav-links a {
+    display: block !important;
+  }
+}
