@@ -3,27 +3,27 @@ import './styles/vendas.css'
 
 // Icones SVG
 const IconArrow = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="5" y1="12" x2="19" y2="12"/>
     <polyline points="12 5 19 12 12 19"/>
   </svg>
 )
 
 const IconLock = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
     <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
   </svg>
 )
 
 const IconCheck = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 )
 
 const IconX = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <line x1="18" y1="6" x2="6" y2="18"/>
     <line x1="6" y1="6" x2="18" y2="18"/>
   </svg>
@@ -45,83 +45,85 @@ const VendasPage = () => {
     <div className="vendas-page">
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge">Garantia de 7 Dias</div>
+        <div className="hero-badge">Guia pra Paz</div>
         
         <h1 className="hero-title">
-          Descubra O Segredo Que Pais De Crianças Com TDAH Estao Usando Para
+          Descubra O Segredo Que Pais De Crianças Com TDAH Estão Usando Para
           <span className="highlight"> Transformar Seus Filhos Em Apenas 2-3 Semanas</span>
         </h1>
 
         <p className="hero-subtitle">
-          Sem depender apenas de consultas medicas caras. Sem sentir-se um pai incompetente. Sem culpa.
+          Sem depender apenas de consultas médicas caras. Sem sentir-se um pai incompetente. Sem culpa.
         </p>
 
         <button className="cta-button" onClick={scrollToOferta}>
           QUERO TRANSFORMAR MEU FILHO
           <IconArrow />
         </button>
+
+        <p className="hero-aviso">Restam poucas vagas para as primeiras 200 pessoas</p>
       </section>
 
       {/* PROBLEMA */}
       <section className="section">
-        <div className="section-tag">Voce se identifica?</div>
+        <div className="section-tag">Você se identifica?</div>
         
-        <ul>
-          <li>Seu filho se sente "diferente" ou "errado"</li>
-          <li>Ja gastou fortunas em terapias sem resultado</li>
-          <li>Consultas medicas sao rapidas demais</li>
-          <li>A escola reclama mas nao ajuda</li>
-          <li>Cansado de ser julgado como pai</li>
-        </ul>
+        <div className="problemas-lista">
+          <div className="problema-item"><IconX /> <span>Seu filho se sente "diferente" ou "errado"</span></div>
+          <div className="problema-item"><IconX /> <span>Já gastou fortunas em terapias sem resultado</span></div>
+          <div className="problema-item"><IconX /> <span>Consultas médicas são rápidas demais</span></div>
+          <div className="problema-item"><IconX /> <span>A escola reclama mas não ajuda</span></div>
+          <div className="problema-item"><IconX /> <span>Cansado de ser julgado como pai</span></div>
+        </div>
       </section>
 
       {/* STORY */}
       <section className="section section-cinza">
-        <div className="section-tag">A Historia Real</div>
+        <div className="section-tag">A História Real</div>
         
-        <h2>"Eu Achava Que Estava Fazendo Tudo Certo... Ate Perceber O Que Faltava"</h2>
+        <h2>"Eu Achava Que Estava Fazendo Tudo Certo... Até Perceber O Que Faltava"</h2>
 
         <p>
-          Quando meu filho recebeu o diagnostico de TDAH, eu achei que a solucao fosse simples: 
-          levar nos profissionais, seguir as orientacoes e esperar melhorar. Mas nao foi bem assim.
+          Quando meu filho recebeu o diagnóstico de TDAH, eu achei que a solução fosse simples: 
+          levar nos profissionais, seguir as orientações e esperar melhorar. Mas não foi bem assim.
         </p>
         
-        <ul>
-          <li>As consultas medicas eram rapidas</li>
-          <li>Os psicologos davam orientacoes genericas</li>
-          <li>A escola reclamava dos comportamentos, mas nao oferecia solucoes</li>
-        </ul>
+        <div className="story-lista">
+          <div className="story-item">As consultas médicas eram rápidas</div>
+          <div className="story-item">Os psicólogos davam orientações genéricas</div>
+          <div className="story-item">A escola reclamava dos comportamentos, mas não oferecia soluções</div>
+        </div>
 
         <div className="destaque">
           <h3>O Momento da Virada</h3>
           <p>
-            Foi quando percebi: eu nao precisava substituir os profissionais. 
-            Eu precisava ENTENDER meu filho o suficiente para extrair o MAXIMO do que cada um podia oferecer.
+            Foi quando percebi: eu não precisava substituir os profissionais. 
+            Eu precisava ENTENDER meu filho o suficiente para extrair o MÁXIMO do que cada um podia oferecer.
           </p>
           <p>
-            Quando comecei a compreender como o cerebro dele funcionava — por que ele perdia o foco, 
-            por que explosoes emocionais aconteciam — tudo mudou.
+            Quando comecei a compreender como o cérebro dele funcionava — por que ele perdia o foco, 
+            por que explosões emocionais aconteciam — tudo mudou.
           </p>
         </div>
       </section>
 
       {/* CONTEUDO */}
       <section className="section">
-        <div className="section-tag">O Que Voce Vai Encontrar</div>
+        <div className="section-tag">O Que Você Vai Encontrar</div>
         
-        <h2>O "Guia Digital: TDAH" e uma conversa franca, acolhedora e baseada em ciencia.</h2>
+        <h2>O "Guia Digital: TDAH" é uma conversa franca, acolhedora e baseada em ciência.</h2>
 
         {[
-          { num: "01", titulo: "O Que E TDAH (De Verdade)?", desc: "Entenda a neurobiologia por tras do TDAH sem termos medicos complicados.", ganho: "Clareza para deixar a culpa de lado." },
-          { num: "02", titulo: "Desatencao ou Desinteresse?", desc: "Aprenda a distinguir quando e TDAH e quando e falta de estimulo.", ganho: "Capacidade de reativar o interesse." },
-          { num: "03", titulo: "O Cerebro do Seu Filho", desc: "Uma viagem pela neurociencia acessivel. Entenda dopamina e neuroplasticidade.", ganho: "Compreensao profunda para lutar POR seu filho." },
-          { num: "04", titulo: "O Poder do Reconhecimento", desc: "A 'Proporcao Magica' de Gottman. Aprenda a validar seu filho.", ganho: "Relacionamento profundo baseado em confianca." },
-          { num: "05", titulo: "Escola: Aliada ou Vilã?", desc: "Conheca a Lei 14.254/2021. Aprenda que adaptacoes pedir e como negociar.", ganho: "Um filho se sentindo apoiado na escola." },
-          { num: "06", titulo: "Medicacao: Sim ou Nao?", desc: "Tudo sobre medicacao e suplementos com evidencia cientifica.", ganho: "Decisoes informadas com os medicos." },
-          { num: "07", titulo: "Suplementos e Alimentacao", desc: "O que a ciencia diz sobre omega-3, zinco, magnesio e alimentacao.", ganho: "O que incluir e o que evitar na dieta." },
-          { num: "08", titulo: "Ansiedade, Sono e Emocoes", desc: "O TDAH raramente viaja sozinho. Entenda como ansiedade e sono afetam tudo.", ganho: "Menos explosoes, mais noites tranquilas." },
-          { num: "09", titulo: "3 Passos Para Lidar com TDAH", desc: "Um framework simples: Entender → Observar → Atuar. Plano de acao de 7 dias.", ganho: "Saber exatamente o que fazer." },
-          { num: "10", titulo: "Voce Nao Esta Sozinho", desc: "TDAH como potencial. Celebrando pequenas vitorias. Construindo uma rede de apoio.", ganho: "Esperanca e comunidade." }
+          { num: "01", titulo: "O Que É TDAH (De Verdade)?", desc: "Entenda a neurobiologia por trás do TDAH sem termos médicos complicados.", ganho: "Clareza para deixar a culpa de lado." },
+          { num: "02", titulo: "Desatenção ou Desinteresse?", desc: "Aprenda a distinguir quando é TDAH e quando é falta de estímulo.", ganho: "Capacidade de reativar o interesse." },
+          { num: "03", titulo: "O Cérebro do Seu Filho", desc: "Uma viagem pela neurociência acessível. Entenda dopamina e neuroplasticidade.", ganho: "Compreensão profunda para lutar POR seu filho." },
+          { num: "04", titulo: "O Poder do Reconhecimento", desc: "A 'Proporção Mágica' de Gottman. Aprenda a validar seu filho.", ganho: "Relacionamento profundo baseado em confiança." },
+          { num: "05", titulo: "Escola: Aliada ou Vilã?", desc: "Conheça a Lei 14.254/2021. Aprenda que adaptações pedir e como negociar.", ganho: "Um filho se sentindo apoiado na escola." },
+          { num: "06", titulo: "Medicação: Sim ou Não?", desc: "Tudo sobre medicação e suplementos com evidência científica.", ganho: "Decisões informadas com os médicos." },
+          { num: "07", titulo: "Suplementos e Alimentação", desc: "O que a ciência diz sobre ômega-3, zinco, magnésio e alimentação.", ganho: "O que incluir e o que evitar na dieta." },
+          { num: "08", titulo: "Ansiedade, Sono e Emoções", desc: "O TDAH raramente viaja sozinho. Entenda como ansiedade e sono afetam tudo.", ganho: "Menos explosões, mais noites tranquilas." },
+          { num: "09", titulo: "3 Passos Para Lidar com TDAH", desc: "Um framework simples: Entender → Observar → Atuar. Plano de ação de 7 dias.", ganho: "Saber exatamente o que fazer." },
+          { num: "10", titulo: "Você Não Está Sozinho", desc: "TDAH como potencial. Celebrando pequenas vitórias. Construindo uma rede de apoio.", ganho: "Esperança e comunidade." }
         ].map((mod) => (
           <div className="modulo" key={mod.num}>
             <div className="modulo-header">
@@ -129,7 +131,7 @@ const VendasPage = () => {
               <span className="modulo-titulo">{mod.titulo}</span>
             </div>
             <p className="modulo-desc">{mod.desc}</p>
-            <div className="modulo-ganho"><strong>Voce vai ganhar:</strong> {mod.ganho}</div>
+            <div className="modulo-ganho"><strong>Você vai ganhar:</strong> {mod.ganho}</div>
           </div>
         ))}
       </section>
@@ -138,101 +140,101 @@ const VendasPage = () => {
       <section className="section section-cinza">
         <div className="section-tag">Provas Reais</div>
         
-        <h2>O Que Pais Reais Estao Dizendo</h2>
+        <h2>O Que Pais Reais Estão Dizendo</h2>
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "Meu filho faz terapia ha anos, mas so quando comecei a aplicar as estrategias em casa vimos resultados. 
-            A evolucao foi exponencial."
+            "Meu filho faz terapia há anos, mas só quando comecei a aplicar as estratégias em casa vimos resultados. 
+            A evolução foi exponencial."
           </p>
           <div className="depoimento-autor">
-            <strong>Andre S.</strong> — <span>pai de Gabriel (8 anos)</span>
+            <strong>André S.</strong> — <span>pai de Gabriel (8 anos)</span>
           </div>
         </div>
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "Passei meses culpando os medicos. Hoje entendo que o tratamento e uma equipe: medicos, terapeutas, 
+            "Passei meses culpando os médicos. Hoje entendo que o tratamento é uma equipe: médicos, terapeutas, 
             escola e eu. Este guia me ensinou a ser a ponte."
           </p>
           <div className="depoimento-autor">
-            <strong>Juliana R.</strong> — <span>mae de Enzo (6 anos)</span>
+            <strong>Juliana R.</strong> — <span>mãe de Enzo (6 anos)</span>
           </div>
         </div>
 
         <div className="depoimento">
           <p className="depoimento-texto">
-            "As manhas eram um caos de gritos e atrasos. Com a tecnica do 'Reinicio Calmante' do guia, 
-            hoje saimos de casa sorrindo. Parece magica, mas e so entender o cerebro deles."
+            "As manhãs eram um caos de gritos e atrasos. Com a técnica do 'Reinício Calmante' do guia, 
+            hoje saímos de casa sorrindo. Parece mágica, mas é só entender o cérebro deles."
           </p>
           <div className="depoimento-autor">
-            <strong>Patricia D.</strong> — <span>mae de Sofia (11 anos)</span>
+            <strong>Patrícia D.</strong> — <span>mãe de Sofia (11 anos)</span>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="section">
-        <div className="section-tag">Duvidas Frequentes</div>
+        <div className="section-tag">Dúvidas Frequentes</div>
         
         <h2>Perguntas Frequentes</h2>
 
         <div className="faq-item">
-          <h3>Este guia substitui acompanhamento medico?</h3>
-          <p>Nao. O guia e um complemento para voce entender melhor seu filho e extrair o maximo dos profissionais. 
-          Sempre mantenha o acompanhamento medico.</p>
+          <h3>Este guia substitui acompanhamento médico?</h3>
+          <p>Não. O guia é um complemento para você entender melhor seu filho e extrair o máximo dos profissionais. 
+          Sempre mantenha o acompanhamento médico.</p>
         </div>
 
         <div className="faq-item">
           <h3>Como isso ajuda nas consultas?</h3>
-          <p>Quando voce entende o TDAH, consegue descrever sintomas com precisao, fazer perguntas relevantes 
+          <p>Quando você entende o TDAH, consegue descrever sintomas com precisão, fazer perguntas relevantes 
             e acompanhar o tratamento de forma mais efetiva.</p>
         </div>
 
         <div className="faq-item">
-          <h3>Meu filho ja faz terapia, preciso deste guia?</h3>
-          <p>A terapia e essencial, mas o que voce faz em casa tem impacto maior ainda. 
-            O guia da as ferramentas para aplicar no dia a dia o que e discutido na terapia.</p>
+          <h3>Meu filho já faz terapia, preciso deste guia?</h3>
+          <p>A terapia é essencial, mas o que você faz em casa tem impacto maior ainda. 
+            O guia dá as ferramentas para aplicar no dia a dia o que é discutido na terapia.</p>
         </div>
 
         <div className="faq-item">
           <h3>Quanto tempo para ver resultados?</h3>
-          <p>Muitos pais relatam mudancas em 2-3 semanas, quando comecam a aplicar as estrategias consistentemente. 
-            Cada crianca e diferente, mas a compreensao muda tudo.</p>
+          <p>Muitos pais relatam mudanças em 2-3 semanas, quando começam a aplicar as estratégias consistentemente. 
+            Cada criança é diferente, mas a compreensão muda tudo.</p>
         </div>
 
         <div className="faq-item">
           <h3>Como vou receber o guia?</h3>
-          <p>Acesso imediato apos a compra. Voce recebe um link para baixar o PDF e pode acessar 
+          <p>Acesso imediato após a compra. Você recebe um link para baixar o PDF e pode acessar 
             em qualquer dispositivo: celular, tablet ou computador.</p>
         </div>
       </section>
 
       {/* COMPARATIVO */}
       <section className="section section-cinza">
-        <div className="section-tag">Oferta de Lancamento</div>
+        <div className="section-tag">Oferta de Lançamento</div>
         
         <h2>Escolha Agora...</h2>
 
         <div className="comparativo">
           <div className="comparativo-nao">
-            <h3>Continuar Como Esta</h3>
-            <ul>
-              <li><IconX /> Continuar frustrado</li>
-              <li><IconX /> Continuar sentindo que nao faz o suficiente</li>
-              <li><IconX /> Mesmos resultados</li>
-            </ul>
+            <h3>Continuar Como Está</h3>
+            <div className="comparativo-lista">
+              <div className="comparativo-item-nao"><IconX /> <span>Continuar frustrado</span></div>
+              <div className="comparativo-item-nao"><IconX /> <span>Continuar sentindo que não faz o suficiente</span></div>
+              <div className="comparativo-item-nao"><IconX /> <span>Mesmos resultados</span></div>
+            </div>
           </div>
 
           <div className="comparativo-sim">
             <div className="recomendado">RECOMENDADO</div>
             <h3>Transformar Hoje</h3>
             
-            <ul>
-              <li><IconCheck /> Investir no conhecimento</li>
-              <li><IconCheck /> Mudar sua relacao com seu filho</li>
-              <li><IconCheck /> Resultados em 2-3 semanas</li>
-            </ul>
+            <div className="comparativo-lista">
+              <div className="comparativo-item-sim"><IconCheck /> <span>Investir no conhecimento</span></div>
+              <div className="comparativo-item-sim"><IconCheck /> <span>Mudar sua relação com seu filho</span></div>
+              <div className="comparativo-item-sim"><IconCheck /> <span>Resultados em 2-3 semanas</span></div>
+            </div>
           </div>
         </div>
       </section>
@@ -240,11 +242,11 @@ const VendasPage = () => {
       {/* OFERTA */}
       <section id="oferta" className="oferta">
         <div className="oferta-box">
-          <div className="oferta-tag">Oferta de Lancamento</div>
+          <div className="oferta-tag">Oferta de Lançamento</div>
           
           <h2 className="oferta-titulo">Guia Digital: TDAH</h2>
           
-          <p className="oferta-subtitle">Entenda seu filho tao profundamente que voce se torna o melhor aliado de quem o ajuda.</p>
+          <p className="oferta-subtitle">Entenda seu filho tão profundamente que você se torna o melhor aliado de quem o ajuda.</p>
 
           <div className="preco">
             <div className="preco-antigo">De R$ 97,00</div>
@@ -257,15 +259,13 @@ const VendasPage = () => {
             <IconArrow />
           </button>
 
-          <div className="urgencia">
-            <strong>⚡ Este preco e por tempo limitado as primeiras 200 pessoas.</strong>
-          </div>
+          <p className="urgencia-discreta">Restam poucas vagas para as primeiras 200 pessoas</p>
 
           <div className="garantia">
             <IconLock />
             <div className="garantia-texto">
               <strong>Garantia de 7 Dias</strong>
-              <p>Se em 7 dias voce nao sentir que este guia transformou sua compreensao sobre seu filho, 
+              <p>Se em 7 dias você não sentir que este guia transformou sua compreensão sobre seu filho, 
                 devolvemos 100% do seu dinheiro. Sem perguntas.</p>
             </div>
           </div>
@@ -275,7 +275,7 @@ const VendasPage = () => {
       {/* FOOTER */}
       <footer className="footer">
         <p>2026 — Todos os direitos reservados.</p>
-        <p>Este site nao garante resultados especificos. Resultados podem variar. Material para fins educacionais.</p>
+        <p>Este site não garante resultados específicos. Resultados podem variar. Material para fins educacionais.</p>
       </footer>
     </div>
   )
