@@ -83,12 +83,13 @@ body {
   z-index: 2;
 }
 
-/* IMAGEM FULL WIDTH */
+/* IMAGEM FULL WIDTH - Sem bordas */
 .hero-imagem-container {
   width: 100%;
   max-width: 100%;
   margin: 0;
-  z-index: 1;
+  padding: 0;
+  overflow: hidden;
 }
 
 .hero-imagem {
@@ -96,6 +97,9 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* BOTÃO CTA */
