@@ -70,16 +70,12 @@ const VendasPage = () => {
   }
 
   return (
-    <div className="vendas-page">
+    <div
+      className="vendas-page"
+      style={{ backgroundImage: 'linear-gradient(rgba(241, 241, 239, 0.76), rgba(241, 241, 239, 0.76)), url(./capa-ebook.png)' }}
+    >
       {/* HERO */}
       <section className="hero">
-        <a className="brand-logo" href="/" aria-label="Página inicial">
-          <img
-            src="https://cdn.shopify.com/b/shopify-brochure2-assets/b2e2f48c81f4ae49a1f1f3c128238f50.svg"
-            alt="Shopify"
-          />
-        </a>
-
         <div className="hero-badge">GUIA DIGITAL: ENTENDENDO TDAH</div>
         
         <h1 className="hero-title">
@@ -92,9 +88,7 @@ const VendasPage = () => {
           Este guia te mostra como lutar <strong>por</strong> ele, não <strong>contra</strong> ele.
         </p>
 
-        <div className="hero-imagem-container">
-          <img src="./capa-ebook.png" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
-        </div>
+        {/* imagem agora no fundo da página */}
 
         <button className="cta-button" onClick={scrollToProblema}>
           QUERO ENTENDER MEU FILHO
