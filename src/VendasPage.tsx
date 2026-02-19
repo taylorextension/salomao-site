@@ -86,7 +86,7 @@ const VendasPage = () => {
         </p>
 
         <div className="hero-imagem-container">
-          <img src="./capa-ebook.jpg" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
+          <img src="./capa-ebook.png" alt="Entendendo o TDAH - Um guia prático e acolhedor" className="hero-imagem" />
         </div>
 
         <button className="cta-button" onClick={scrollToProblema}>
